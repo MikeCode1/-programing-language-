@@ -15,6 +15,9 @@ namespace CodeLang
             int whileLoopStartPos = 0;
             int whileIfVarPos1 = 0;
             int whileIfVarPos2 = 0;
+            int startForLoop = 0;
+            int forCycle = 0;
+            int maxForCycle = 0;
             Random rnd = new Random();
 
             using (var streamReader = new StreamReader(@"..\..\..\Input\NewCode.txt"))
@@ -74,8 +77,8 @@ namespace CodeLang
                         pos += 10 + add;
                     }
 
-                    // gos to position
-                    else if (streamReaderOutput[pos] == 'c' && streamReaderOutput[pos + 1] == 'g')
+                    // jumps to position
+                    else if (streamReaderOutput[pos] == 'j')
                     {
                         pos = vars[varPos];
                     }
@@ -135,6 +138,29 @@ namespace CodeLang
                             {
                                 pos = whileLoopStartPos;
                             }
+                        }
+                    }
+
+                    // start for loop
+                    else if (streamReaderOutput[pos] == 'l' && streamReaderOutput[pos + 1] == 'T' && streamReaderOutput[pos + 2] == '/')
+                    {
+                        pos += 2;
+                        startForLoop = pos;
+                        maxForCycle = indVar;
+                        forCycle = 0;
+                    }
+
+                    // end for loop
+                    else if (streamReaderOutput[pos] == '/' && streamReaderOutput[pos + 1] == 'l' && streamReaderOutput[pos + 2] == 'T')
+                    {
+                        forCycle++;
+                        if (forCycle >= maxForCycle)
+                        {
+                            pos += 2;
+                        }
+                        else
+                        {
+                            pos = startForLoop;
                         }
                     }
 
