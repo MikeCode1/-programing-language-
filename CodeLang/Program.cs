@@ -18,6 +18,7 @@ namespace CodeLang
             int startForLoop = 0;
             int forCycle = 0;
             int maxForCycle = 0;
+            int startTillLoop = 0;
             Random rnd = new Random();
 
             using (var streamReader = new StreamReader(@"..\..\..\Input\NewCode.txt"))
@@ -164,6 +165,29 @@ namespace CodeLang
                         }
                     }
 
+                    // start loop till exit
+                    else if (streamReaderOutput[pos] == 'T' && streamReaderOutput[pos + 1] == '/')
+                    {
+                        pos++;
+                        startTillLoop = pos;
+                    }
+
+                    // end till loop
+                    else if (streamReaderOutput[pos] == '/' && streamReaderOutput[pos + 1] == 'T')
+                    {
+                        pos = startTillLoop;
+                    }
+
+                    // exit till loop
+                    else if (streamReaderOutput[pos] == 'e' && streamReaderOutput[pos + 1] == 'T')
+                    {
+                        while (!(streamReaderOutput[pos] == '/' && streamReaderOutput[pos + 1] == 'T'))
+                        {
+                            pos++;
+                        }
+                        pos++;
+                    }
+
                     // start if
                     else if (streamReaderOutput[pos] == 'i' && streamReaderOutput[pos + 1] == '/')
                     {
@@ -179,7 +203,7 @@ namespace CodeLang
                                 {
                                     pos++;
                                 }
-                                pos += 2;
+                                pos += 1;
                             }
                         }
                         else if (streamReaderOutput[pos + 2] == '!')

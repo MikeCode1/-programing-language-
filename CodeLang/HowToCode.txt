@@ -156,6 +156,7 @@ Loops:
 start a forever loop with f/ and end it with /f
 start a while loop with w/ and end it with /w and the first var pos like this: 0000 and then the secend var pos like this: 0000 then the statement like this: = or ! or > or <
 start a for loop with lT/ (the for max cycle is the arrow var) and end it with /lT
+start till loop with T/ and end it with /T but to stop it use eT
 
 
 Delay:
