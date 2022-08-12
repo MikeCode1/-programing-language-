@@ -1,43 +1,43 @@
-﻿How to code in this programing language:
+﻿# How to code in this programing language
 
+## How it works
 
+### This programing language uses an array to store the vars like this:
 
-How it works:
-This programing language uses an array to store the vars like this:
-0, 0, 0, 0, 0,...
+    0, 0, 0, 0, 0,...
 
-And how you use them is with an arrow that starts at position 0:
-0, 0, 0, 0, 0,...
-/\
-||
+### And how you use them is with an arrow that starts at position 0:
 
-The arrow has a var in it to procces info:
+    0, 0, 0, 0, 0,...
+    /\
+    ||
+
+### The arrow has a var in it to procces info:
+
+```
 0, 0, 0, 0, 0,...
 /\
 ||
 0
+```
 
+## Arrow movement:
+`>` moves the arrow one to the right and `<` moves the arrow one to the left
+Or you can use `g` like this:
+`g0011` (go to var array pos 11)
 
-Arrow movement:
-
-> moves the arrow one to the right and < moves the arrow one to the left
-Or you can use g like this:
-g0011  (go to var array pos 11)
-
-
-Set vars:
-
-use s to set the arrow var like this:
-s0000001234   (set arrow var to 1234)
+## Set vars:
+use `s` to set the arrow var like this:
+`s0000001234` (set arrow var to 1234)
 and like this:
-s-0000000123   (set arrow var to -123)
+`s-0000000123` (set arrow var to -123)
 and to move it to the array use v
 but to do the opesite use t.
 
-
-Printing:
+## Printing:
 use nW to print the number from the array at the position of the arrow
 use cW to print letters and characters:
+```
 id 0: 0
 id 1: 1
 id 2: 2
@@ -133,35 +133,51 @@ id 91: |
 id 92: `
 id 93: ~
 id 94:  
-use e to enter
+```
+
+use `e` to enter
+
+## Math:
+
+`+` set var += array content at current position
+
+`-` set var -= array content at current position
+
+`*` set var *= array content at current position
+
+`:` set var /= array content at current position
+
+`^` set var ^= array content at current position
+
+use ` | ` to: |arrow var|
+
+`%` set var %= array content at current position
+
+use ` cR ` to: get the square root of arrow var
+
+use ` r ` to: get a random number up to array var
 
 
-Math:
-use + to: arrow var + array var
-use - to: arrow var - array var
-use * to: arrow var * array var
-use : to: arrow var / array var
-use ^ to: arrow var ^ array var
-use | to: |arrow var|
-use % to: arrow var % array var
-use cR to: get the square root of arrow var
-use r to: get a random number up to array var
+
+## If:
+start an if with `i/` and then `=` or `!` or `>` or `<` then the code in the if the to end the if use /i
 
 
-If:
-start an if with i/ and then = or ! or > or < then the code in the if the to end the if use /i
+## Loops:
 
+start a forever loop with `f/` and end it with `/f`
 
-Loops:
-start a forever loop with f/ and end it with /f
-start a while loop with w/ and end it with /w and the first var pos like this: 0000 and then the secend var pos like this: 0000 then the statement like this: = or ! or > or <
-start a for loop with lT/ (the for max cycle is the arrow var) and end it with /lT
-start till loop with T/ and end it with /T but to stop it use eT
+start a while loop with `w/` and end it with `/w` and the first var pos like this: `0000` and then the secend var pos like this: `0000` then the statement like this: `=` or `!` or `>` or `<`
+
+start a for loop with `lT/` (the for max cycle is the arrow var) and end it with `/lT`
+
+start till loop with `T/` and end it with `/T` but to stop it use `eT`
+
 
 
 Delay:
-delay with d in milasecends from arrow var
+delay with `d` in milasecends from arrow var
 
 
 Complex:
-use j to move pos in code like this: j (reads the var array pos var and goes to that pos in the code)
+use `j` to move pos in code like this: `j` (reads the var array pos var and goes to that pos in the code)
