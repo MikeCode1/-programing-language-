@@ -21,7 +21,19 @@ namespace CodeLang
             int startTillLoop = 0;
             Random rnd = new Random();
 
-            using (var streamReader = new StreamReader(@"..\..\..\Input\NewCode.txt"))
+            if (args.Length != 1)
+            {
+                throw new ArgumentException("Usage: CodeLang <filePath>");
+            }
+
+            if (!File.Exists(args[0]))
+            {
+                throw new ArgumentException($"File not found: {args[0]}");
+            }
+
+            string filePath = args[0];
+
+            using (var streamReader = new StreamReader(filePath))
             {
                 var streamReaderOutput = streamReader.ReadLine();
                 for (int pos = 0; pos < streamReaderOutput.Length && streamReaderOutput[pos] != ' '; pos++)
