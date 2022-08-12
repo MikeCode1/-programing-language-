@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CodeLang": {
+      "commandName": "Project",
+      "commandLineArgs": "Input\\NewCode.txt"
+    }
+  }
+}
