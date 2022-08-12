@@ -682,6 +682,7 @@ namespace CodeLang
                         }
                         pos++;
                     }
+
                     else
                     {
                         return;
